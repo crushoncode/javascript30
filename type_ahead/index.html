@@ -33,7 +33,19 @@
                 return place.city.match(regex) || place.state.match(regex)
             })
         }
-        
+
+        function displayMatches() {
+            console.log(this.value);
+        }
+
+        const searchInput = document.querySelector('.search');
+        const suggestions = document.querySelector('.suggestions');
+
+        // change event only fires when we go off that input, not whenever we type into.
+        searchInput.addEventListener('change', displayMatches);
+        // every time we key up, it's going to tell us what the person has typed into that box.
+        searchInput.addEventListener('keyup', displayMatches)
+
     </script>
 </body>
 
